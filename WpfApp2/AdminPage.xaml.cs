@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -68,14 +70,28 @@ namespace WpfApp2
             // Perform the confirmation operation asynchronously
             await Task.Delay(1000); // Placeholder for actual async operation
             var response = await httpClient.GetAsync(api + "/superapp/admin/users");
-            MessageBox.Show($"The user exists in the system executed for Superapp: {superapp}, Email: {email}");
+            if (response.IsSuccessStatusCode)
+            {
+                MessageBox.Show($"The user exists in the system executed for Superapp: {superapp}, Email: {email}");
+            }
+            else
+            {
+                MessageBox.Show($"The user does not exist in the system executed for Superapp: {superapp}, Email: {email}");
+            }
         }
 
         private async Task DeleteAsync(string superapp, string email)
         {
 
             var response = await httpClient.GetAsync(api + "/superapp/admin/objects");
-            MessageBox.Show($"The user has been deleted from the system executed for Superapp: {superapp}, Email: {email}");
+            if (response.IsSuccessStatusCode)
+            {
+                MessageBox.Show($"The user has been deleted from the system executed for Superapp: {superapp}, Email: {email}");
+            }
+            else
+            {
+                MessageBox.Show($"The user does not exist in the system executed for Superapp: {superapp}, Email: {email}");
+            }
         }
     }
 }

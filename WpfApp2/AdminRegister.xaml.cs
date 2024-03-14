@@ -52,7 +52,7 @@ namespace WpfApp2
                 formData.Add(new StringContent(email), "email");
 
                 // Send registration request to the server
-                var response = await httpClient.GetAsync(api + "/superapp/admin/useres/");
+                var response = await httpClient.GetAsync(api + "/superapp/users/login/" + superapp + "/" + email);
                 if (response.IsSuccessStatusCode)
                 {
 
@@ -60,8 +60,6 @@ namespace WpfApp2
                     AdminPage AdPage = new AdminPage();
                     AdPage.Show();
                     this.Close();
-                    // pass new screean
-
                 }
                 else
                 {
