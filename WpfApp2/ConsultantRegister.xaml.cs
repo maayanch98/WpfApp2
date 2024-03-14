@@ -19,9 +19,6 @@ namespace WpfApp2
             httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri("api");
         }
-        
-
-
         private async void Register_Click(object sender, RoutedEventArgs e)
         {
             // Get user input
@@ -43,9 +40,6 @@ namespace WpfApp2
 
                 // Send registration request to the server
                 var response = await httpClient.GetAsync(api + "/superapp/users/login/" + superapp + "/" + email);
-
-                //var response = await httpClient.PostAsync("http://localhost:8085/superapp/users/login/2024a.otiel.malik/a%40a.com", null);
-                // Check if registration was successful
                 if (response.IsSuccessStatusCode)
                 {
                     MessageBox.Show("Consultant registered successfully.");

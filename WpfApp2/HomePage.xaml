@@ -22,7 +22,7 @@
                 <ComboBoxItem Content="Noune"/>
                 <ComboBoxItem Content="Dreamer"/>
                 <ComboBoxItem Content="Consultant"/>
-                <ComboBoxItem Content="Admun"/>
+                <ComboBoxItem Content="Admin"/>
             </ComboBox>
         </StackPanel>
         <Frame x:Name="MainFrame"/>

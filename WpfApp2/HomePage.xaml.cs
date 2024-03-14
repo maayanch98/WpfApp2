@@ -93,7 +93,7 @@ namespace WpfApp2
                 }
                 if (userType == "System.Windows.Controls.ComboBoxItem: Admin")
                 {
-                    MessageBox.Show("Select a user type");
+                    MessageBox.Show("ADMIN user must be in the system");
 
                 }
 
@@ -139,8 +139,8 @@ namespace WpfApp2
                 }
                 if (userType == "System.Windows.Controls.ComboBoxItem: Admin")
                 {
-                    AdminRegister consReg = new AdminRegisterRegister();
-                    consReg.Show();
+                    AdminRegister adminReg= new AdminRegister();
+                    adminReg.Show();
                     this.Close();
                 }
             }
