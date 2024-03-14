@@ -1,0 +1,123 @@
+﻿<Window x:Class="WpfApp2.DreamerLogin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="DreamerLogin" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="C:\Users\mayaa\source\repos\WpfApp2\background.jpeg"/>
+        </Grid.Background>
+        <Grid Margin="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="300" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Column="1" Grid.Row="1" Background="White" Opacity="0.80" Margin="0,10">
+                <StackPanel Margin="30">
+                    <TextBlock Text="Login Dreamer" FontWeight="Bold" FontSize="20" Margin="0,0,0,20"/>
+
+                    <!-- Username -->
+                    <Grid Margin="0,0,0,8">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" MinWidth="80"/>
+                            <ColumnDefinition Width="8"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Username:" Foreground="#333" VerticalAlignment="Center"/>
+                        <TextBox x:Name="signupUsername" Grid.Column="2" Padding="5" BorderThickness="1" BorderBrush="#ccc"/>
+                    </Grid>
+
+                    <!-- Password -->
+                    <Grid Margin="0,8,0,8">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" MinWidth="80"/>
+                            <ColumnDefinition Width="8"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Password:" Foreground="#333" VerticalAlignment="Center"/>
+                        <PasswordBox x:Name="signupPassword" Grid.Column="2" Padding="5" BorderThickness="1" BorderBrush="#ccc"/>
+                    </Grid>
+
+                    <!-- Email -->
+                    <Grid Margin="0,8,0,8">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" MinWidth="80"/>
+                            <ColumnDefinition Width="8"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Email:" Foreground="#333" VerticalAlignment="Center"/>
+                        <TextBox x:Name="signupEmail" Grid.Column="2" Padding="5" BorderThickness="1" BorderBrush="#ccc"/>
+                    </Grid>
+
+                    <!-- Gender -->
+                    <Grid Margin="0,8,0,8">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" MinWidth="80"/>
+                            <ColumnDefinition Width="8"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Gender:" Foreground="#333" VerticalAlignment="Center"/>
+                        <ComboBox x:Name="genderComboBox" Grid.Column="2" SelectedIndex="0" Width="120">
+                            <ComboBoxItem Content="None"/>
+                            <ComboBoxItem Content="Man"/>
+                            <ComboBoxItem Content="Woman"/>
+                        </ComboBox>
+                    </Grid>
+
+                    <!-- Location -->
+                    <Grid Margin="0,8,0,8">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" MinWidth="80"/>
+                            <ColumnDefinition Width="8"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Location:" Foreground="#333" VerticalAlignment="Center"/>
+                        <ComboBox x:Name="locationComboBox" Grid.Column="2" SelectedIndex="0" Width="120">
+                            <ComboBoxItem Content="North"/>
+                            <ComboBoxItem Content="South"/>
+                            <ComboBoxItem Content="Center"/>
+                            <ComboBoxItem Content="East"/>
+                            <ComboBoxItem Content="West"/>
+                        </ComboBox>
+                    </Grid>
+
+                    <!-- Birthday (DD-MM-YYYY) -->
+                    <Grid Margin="0,8,0,8">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="8"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="8"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <ComboBox x:Name="dayComboBox" Width="60" SelectedIndex="0" GotFocus="Day_ComboBox">
+                            <ComboBoxItem Content="DD"/>
+                            <!-- Dynamically populated -->
+                        </ComboBox>
+                        <ComboBox x:Name="monthComboBox" Grid.Column="2" Width="60" SelectedIndex="0" GotFocus="Month_ComboBox">
+                            <ComboBoxItem Content="MM"/>
+                            <!-- Dynamically populated -->
+                        </ComboBox>
+                        <ComboBox x:Name="yearComboBox" Grid.Column="4" Width="80" SelectedIndex="0" GotFocus="Year_ComboBox">
+                            <ComboBoxItem Content="YYYY"/>
+                            <!-- Dynamically populated -->
+                        </ComboBox>
+                    </Grid>
+
+                    <Button Content="Registration to the database" Background="#4caf50" Foreground="White" Padding="10,15" Margin="0,10,0,0" HorizontalAlignment="Stretch" Click="Register_Click"/>
+                    <TextBlock Text="Already have an account? " Foreground="#333" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    <TextBlock TextDecorations="Underline" Foreground="#333" FontWeight="Bold" HorizontalAlignment="Center" Text="Register here." MouseDown="RegisterHere_Click" Cursor="Hand"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,106 @@
+﻿<Window x:Class="WpfApp2.ConsultantLogin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="LogIn Consultant" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="C:\Users\mayaa\source\repos\WpfApp2\background.jpeg"/>
+        </Grid.Background>
+        <Grid Margin="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="300" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Column="1" Grid.Row="1" Background="White" Opacity="0.80" Margin="0,10">
+                <StackPanel Margin="30">
+                    <TextBlock Text="LogIn Consultant" FontWeight="Bold" FontSize="20" Margin="0,0,0,20"/>
+
+                    <!-- Username -->
+                    <Grid Margin="0,0,0,8">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" MinWidth="80"/>
+                            <ColumnDefinition Width="8"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Username:" Foreground="#333" VerticalAlignment="Center"/>
+                        <TextBox x:Name="signupUsername" Grid.Column="2" Padding="5" BorderThickness="1" BorderBrush="#ccc"/>
+                    </Grid>
+
+                    <!-- Password -->
+                    <Grid Margin="0,8,0,8">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" MinWidth="80"/>
+                            <ColumnDefinition Width="8"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Password:" Foreground="#333" VerticalAlignment="Center"/>
+                        <PasswordBox x:Name="signupPassword" Grid.Column="2" Padding="5" BorderThickness="1" BorderBrush="#ccc"/>
+                    </Grid>
+
+                    <!-- Email -->
+                    <Grid Margin="0,8,0,8">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" MinWidth="80"/>
+                            <ColumnDefinition Width="8"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Email:" Foreground="#333" VerticalAlignment="Center"/>
+                        <TextBox x:Name="signupEmail" Grid.Column="2" Padding="5" BorderThickness="1" BorderBrush="#ccc"/>
+                    </Grid>
+
+                    <!-- Phone Number -->
+                    <Grid Margin="0,8,0,8">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" MinWidth="80"/>
+                            <ColumnDefinition Width="8"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Phone Number:" Foreground="#333" VerticalAlignment="Center"/>
+                        <TextBox x:Name="phoneNumber" Grid.Column="2" Padding="5" BorderThickness="1" BorderBrush="#ccc"/>
+                    </Grid>
+
+                    <!-- Specialization -->
+                    <Grid Margin="0,8,0,8">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" MinWidth="80"/>
+                            <ColumnDefinition Width="8"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Specialization:" Foreground="#333" VerticalAlignment="Center"/>
+                        <ComboBox x:Name="specializationComboBox" Grid.Column="2" SelectedIndex="0" Width="120">
+                            <ComboBoxItem Content="personal trainer"/>
+                            <ComboBoxItem Content="psychologist"/>
+                            <ComboBoxItem Content="relationship counselor"/>
+                            <ComboBoxItem Content="matchmaker"/>
+                        </ComboBox>
+                    </Grid>
+
+                    <!-- Attempt -->
+                    <Grid Margin="0,8,0,8">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" MinWidth="80"/>
+                            <ColumnDefinition Width="8"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Attempt:" Foreground="#333" VerticalAlignment="Center"/>
+                        <TextBox x:Name="attemptTextBox" Grid.Column="2" Padding="5" BorderThickness="1" BorderBrush="#ccc"/>
+                    </Grid>
+
+                    <Button Content="Login" Background="#4caf50" Foreground="White" Padding="10,15" Margin="0,10,0,0" HorizontalAlignment="Stretch" Click="Login_Click"/>
+                    <TextBlock Text="Don't have an account? " Foreground="#333" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    <TextBlock TextDecorations="Underline" Foreground="#333" FontWeight="Bold" HorizontalAlignment="Center" Text="Register here." MouseDown="RegisterHere_Click" Cursor="Hand"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

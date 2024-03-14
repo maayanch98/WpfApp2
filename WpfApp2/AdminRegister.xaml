@@ -1,0 +1,43 @@
+﻿<Window x:Class="WpfApp2.AdminRegister"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="AdminRegister" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="C:\Users\mayaa\source\repos\WpfApp2\background.jpeg"/>
+        </Grid.Background>
+        <Grid Margin="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="300" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Column="1" Grid.Row="1" Background="White" Opacity="0.80" Margin="0,50">
+                <StackPanel Margin="30">
+                    <TextBlock Text="Admin" FontWeight="Bold" FontSize="20" Margin="0,0,0,20"/>
+                    <Label Content="Superapp:" Foreground="#333" Margin="0,0,0,8"/>
+                    <TextBox x:Name="signupUsername" Margin="0,0,0,16" Padding="10" BorderThickness="1" BorderBrush="#ccc" HorizontalAlignment="Stretch" />
+                    <Label Content="Email:" Foreground="#333" Margin="0,0,0,8"/>
+                    <TextBox x:Name="signupEmail" Margin="0,0,0,16" Padding="10" BorderThickness="1" BorderBrush="#ccc" HorizontalAlignment="Stretch" />
+                    <Button Content="Register" Background="#4caf50" Foreground="White" Padding="10,15" Margin="0,0,0,16" HorizontalAlignment="Stretch" Click="Register_Click"/>
+                    <TextBlock Text="Already have an account? " Foreground="#333" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <TextBlock>
+              <Run Text="Already have an account? "/>
+              <Hyperlink NavigateUri="login.html" Foreground="#333" FontWeight="Bold" Click="Login_Click">
+                  <Run Text="Login here."/>
+              </Hyperlink>
+                    </TextBlock>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
